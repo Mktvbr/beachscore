@@ -15,7 +15,7 @@ Projeto desenvolvido com **Next.js**, **Tailwind CSS** e **Prisma** para exibir 
 1. Clone o repositório:
 
 git clone https://github.com/Mktvbr/beachscore.git
-cd beachscore
+cd beachscoreS
 
 
 ✨ Funcionalidades
