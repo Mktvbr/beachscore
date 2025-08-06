@@ -1,9 +1,9 @@
 import prisma from '@/lib/prisma';
 import Link from 'next/link';
-import Image from 'next/image';
 
 
-export default async function FutevoleiFeed() {
+
+export default async function voleiFeed() {
 
     const posts = await prisma.postVolei.findMany({
         orderBy: { createdAt: 'desc' },
@@ -15,7 +15,7 @@ export default async function FutevoleiFeed() {
     return (
         <main className="flex w-full h-auto justify-center overflow-y-auto overflow-x-auto break-words">
             <div className="flex flex-col w-full h-full max-w-4xl items-center bg-orange-300 shadow-xl p-5 z-10">
-                <h1 className="text-2xl font-bold mb-4">Futevôlei</h1>
+                <h1 className="text-2xl font-bold mb-4">Vôlei</h1>
                 {posts.length === 0 ? (
                     <p className="text-lg mb-6">Nenhum post encontrado.</p>
                 ) : (
@@ -47,8 +47,6 @@ export default async function FutevoleiFeed() {
                         </Link>
                     ))
                 )}
-
-                {/* <img src="/images/futevolei.jpg" alt="Futevôlei" className="w-full h-auto rounded-lg shadow-md" /> */}
             </div>
         </main>
     );
