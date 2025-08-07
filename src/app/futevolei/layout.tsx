@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
-import Image from "next/image";
 import Header from "@/app/components/header/header";
 
 
@@ -16,13 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body>
-      <Header/>
-        <div className="relative w-full  z-100">
-          {children}
-        </div>
-      </body>
-    </html>
+      <>
+        <Header/>
+          <div className="relative w-full  z-100">
+            {children}
+          </div>
+      </>
   );
 }

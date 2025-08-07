@@ -16,13 +16,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body>
+
+      <>
       <Header/>
         <div className="relative w-full  z-100">
           {children}
         </div>
-      </body>
-    </html>
+      </>
   );
 }
