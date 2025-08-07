@@ -4,6 +4,7 @@ import { Editor } from "primereact/editor";
 import { InputText } from 'primereact/inputtext';
 import Thumbnails from "../thumbnails/thumbnails";
 import Description from "../description/index"
+import axios, {AxiosResponse} from "axios";
 import './styles/quillFix.css';
 
 // Define a interface para os props que o componente EditorBloco irá receber
@@ -25,13 +26,12 @@ export default function EditorBloco({ sourceData,sourceDescription, sourceTitle,
 
     //função que envia o conteúdo para a api
     const handleSave = async () => {
-        const res = await fetch('/api/salvarTexto', {
-            method: 'POST',
+        const res = await axios.post('/api/salvarTexto', {
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ 
+            data: { 
                 content: content,
                 description: description,
-            })
+            }
             
         });
     }

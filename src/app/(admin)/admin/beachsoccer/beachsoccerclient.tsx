@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Button } from 'primereact/button';
 import { beachsoccerService } from "@/services";
 import { useSession } from "next-auth/react";
+import Description from "@/app/components/description";
 
 
 export default function BeachsoccerClient() {
@@ -13,22 +14,27 @@ export default function BeachsoccerClient() {
     // "data" é renomeado para "session" para facilitar o uso
     const { data: session } = useSession() 
 
-    const [content, setContent] = useState('')
-    const [title, setTitle] = useState('')
-    const [picture, setPicture] = useState('')
+    const [content, setContent] = useState('');
+    const [title, setTitle] = useState('');
+    const [picture, setPicture] = useState('');
+    const [description, setDescription] = useState('');
 
     // Função usada para receber o conteúdo do editor e atualizar o estado 'content'
     const sourceData = (data: any) => {
-        setContent(data)
+        setContent(data);
     }
 
     // Função usada para receber o título e atualizar o estado 'title'
     const sourceTitle = (title: any) => {
-        setTitle(title)
+        setTitle(title);
     }
 
     const sourceThumbnail = (thumbnail: any) => {
-        setPicture(thumbnail)
+        setPicture(thumbnail);
+    }
+
+    const sourceDescription = (description: any) => {
+        setDescription(description);
     }
 
     // Função assíncrona que será chamada ao clicar no botão 'Salvar'
@@ -38,7 +44,8 @@ export default function BeachsoccerClient() {
         const body = {
             title: title,
             content: content,
-            picture: picture,
+            picture: picture, 
+            description: description,
             published: false,
             authorId: session?.user.id
         }
@@ -67,6 +74,8 @@ export default function BeachsoccerClient() {
                         content={content}
                         title={title}
                         picture={picture}
+                        description={description}
+                        sourceDescription={sourceDescription}
                         sourceThumbnail={sourceThumbnail}
                         sourceData={setContent}
                         sourceTitle={setTitle}
