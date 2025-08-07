@@ -9,6 +9,7 @@ Projeto desenvolvido com **Next.js**, **Tailwind CSS** e **Prisma** para exibir 
 - Prisma + SQLite/PostgreSQL
 - QuillJS Editor
 - TypeScript
+- Axios
 
 📦 Instalação
 
