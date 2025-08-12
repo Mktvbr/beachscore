@@ -10,13 +10,14 @@ async function fetchPosts(id: string) {
 }
 
 export default async function Volei(
-    {params}: { params: { id: string } }
+    props: { params: Promise<{ id: string }> }
 ){
-    const post = await fetchPosts(params.id);
+    const { id } = await props.params
+    const post = await fetchPosts(id);
     return (
         <main className="flex w-full h-auto justify-center overflow-y-auto overflow-x-auto break-words">
             <div className="flex flex-col w-full h-full max-w-4xl items-center bg-orange-300 shadow-xl overflow-x-auto break-words pl-15 pr-15 z-10">
-                <h1 className="text-2xl font-bold w-full break-words overflow-x-auto prose max-w-none pt-7">{post?.title}</h1>
+                <h1 className="text-2xl font-bold text-center w-full break-words prose max-w-none pt-7">{post?.title}</h1>
                 <div dangerouslySetInnerHTML={{ __html: post?.content ?? '' }}
                 className="text-lg mt-4 mb-6 w-full break-words overflow-x-auto prose max-w-none pt-5" />
             </div>

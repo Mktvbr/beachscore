@@ -31,8 +31,8 @@ export default async function voleiFeed() {
                                     />
                                 )}
 
-                                <div className="sm:ml-4 flex flex-col justify-between">
-                                    <h2 className="text-lg sm:text-xl font-semibold text-amber-900">{post.title}</h2>
+                                <div className="sm:ml-4 flex flex-col justify-between min-w-0">
+                                    <h2 className="text-lg sm:text-xl font-semibold truncate text-amber-900">{post.title}</h2>
 
                                     <div
                                         className="text-sm text-gray-700 mt-2"
