@@ -23,25 +23,17 @@ export default function Home() {
         />
         <div className="flex flex-row gap-8 pb-5">
 
-          <Link href='/volei'>
-            <button
-              className="flex flex-col items-center cursor-pointer rounded-xl shadow-xl p-2 hover:bg-orange-500"
-              type="button"
-            >
-              <Image
-                src="/volei.png"
-                alt="Volei de Praia"
-                width={150}
-                height={150}
-              />
-              Volei de Praia
-            </button>
+          <Link href='/volei' className="flex flex-col items-center cursor-pointer rounded-xl shadow-xl p-2 hover:bg-orange-500">
+            <Image
+              src="/volei.png"
+              alt="Volei de Praia"
+              width={150}
+              height={150}
+            />
+            Volei de Praia
           </Link>
-          <Link href='/beachsoccer'>
-            <button 
-            className="flex flex-col items-center cursor-pointer rounded-xl shadow-xl p-2 hover:bg-orange-500	"
-            type="button"
-            >
+
+          <Link href='/beachsoccer className="flex flex-col items-center cursor-pointer rounded-xl shadow-xl p-2 hover:bg-orange-500	"' >
               <Image
                 src="/soccer.png"
                 alt="Beach Soccer"
@@ -49,13 +41,9 @@ export default function Home() {
                 height={150}
               />
               Beach Soccer
-            </button>
           </Link>
-          <Link href='/futevolei'>
-            <button 
-            className="flex flex-col items-center cursor-pointer rounded-xl shadow-xl p-2 hover:bg-orange-500"
-            type="button"
-            >
+
+          <Link href='/futevolei' className="flex flex-col items-center cursor-pointer rounded-xl shadow-xl p-2 hover:bg-orange-500">
               <Image
                 src="/futevolei.png"
                 alt="Futevolei"
@@ -63,11 +51,10 @@ export default function Home() {
                 height={150}
               />
               Futevolei
-            </button>
           </Link>
+          
         </div>
       </div>
-
     </main>
   );
 }
