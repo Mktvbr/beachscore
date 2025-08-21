@@ -14,8 +14,6 @@ export async function POST(req: Request) {
             biography,
             picture,
             titulos,
-            createdAt,
-            updatedAt
         } = body;
 
         if (!name) {
@@ -36,10 +34,16 @@ export async function POST(req: Request) {
                 ranking,
                 biography,
                 picture,
-                titulos,
-                createdAt,
-                updatedAt,
+                titulos
             },
+            include: {
+                participacoes:{
+                    include: {
+                        campeonato: true
+                    }   
+                },
+                pontuacoes: true
+            }
         });
 
         return NextResponse.json(newJogador, { status: 201 });
