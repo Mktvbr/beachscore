@@ -46,3 +46,34 @@ export const beachsoccerService = async (body:any):Promise<AxiosResponse> => {
     }
 
 }
+
+
+export const campeonatoService = async (body:any):Promise<AxiosResponse> => {
+    try {
+        const response =  await axios.post('/api/campeonato',body,{
+            headers: { 'Content-Type': 'application/json' }
+        })
+
+        return response;
+
+    }catch (error) {
+        console.error('Erro no serviço de vôlei:', error);
+        throw new Error('Erro ao processar a solicitação de vôlei');
+    }
+
+}
+
+export const jogadorService = async (body:any):Promise<AxiosResponse> => {
+    try {
+        const response =  await axios.post('/api/jogador',body,{
+            headers: { 'Content-Type': 'application/json' }
+        }) 
+
+        return response;
+
+    }catch (error) {
+        console.error('Erro no serviço de jogador:', error);
+        throw new Error('Erro ao processar a solicitação de jogador');
+    }
+
+}
