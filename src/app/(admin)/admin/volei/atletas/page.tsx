@@ -1,6 +1,6 @@
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/lib/auth";
-import VoleiClient from '@/app/(admin)/admin/volei/atletas/atletaClient';
+import AtletaClient from "@/app/(admin)/admin/volei/atletas/atletaClient";
 
 export default async function VoleiAtletas() {
 
@@ -22,7 +22,7 @@ export default async function VoleiAtletas() {
     return (
     <main className="flex w-full min-h-screen items-center justify-center overflow-y-auto">
       <div className="flex flex-col w-full max-w-4xl items-center bg-orange-300 shadow-xl p-5 z-10">
-        <VoleiClient />
+        <AtletaClient />
       </div>
     </main>
   );

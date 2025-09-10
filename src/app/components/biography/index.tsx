@@ -8,7 +8,7 @@ interface DescriptionProps {
     placeholder?: string;
 }
 
-export default function Description({ biography, placeholder, sourceBiography }: DescriptionProps) {
+export default function Biography({ biography, placeholder, sourceBiography }: DescriptionProps) {
     const editorRef = useRef<HTMLDivElement>(null);
 
 

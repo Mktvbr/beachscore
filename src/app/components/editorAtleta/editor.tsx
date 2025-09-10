@@ -4,6 +4,7 @@ import { Editor } from "primereact/editor";
 import { InputText } from 'primereact/inputtext';
 import Thumbnails from "../thumbnails/thumbnails";
 import Description from "../description/index"
+import Biography from "../biography";
 import axios, {AxiosResponse} from "axios";
 import './styles/quillFix.css';
 
@@ -70,18 +71,13 @@ export default function EditorBloco({ sourceData, sourceDescription, sourceBiogr
             <Description
                 description={description}
                 sourceDescription={sourceDescription}
+                placeholder="Aparecerá no card e no metadados"
             />
 
-            <label className="block font-serif font-bold text-amber-950 mt-6">Biografia</label>
-            <Description
-                biography={biography}
-                sourceBiography={sourceBiography}
-            />
-
-            <label className="block font-semibold m-4 text-amber-950">Conteúdo</label>
+            <label className="block font-semibold m-4 text-amber-950">Biografia</label>
             <Editor
-                value={content}
-                onTextChange={(e) => sourceData(e.htmlValue ?? '')}
+                value={biography}
+                onTextChange={(e) => sourceBiography(e.htmlValue ?? '')}
                 style={{ height: '320px' }}
                 className="bg-white border border-gray-300 rounded-lg"
             />
